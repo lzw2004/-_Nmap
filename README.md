@@ -30,7 +30,9 @@ nmap_path = r"D:\Download_tools\Nmap\nmap.exe"
 我的路径是 "D:\Download_tools\Nmap\nmap.exe" 改成你的就好啦
 
 全部操作完就得到了一个简易版的Nmap网络扫描小工具
+
 直接运行 main.py 或者 运行 小志Nmap探测.cmd都可以
+
 Image文件夹下放了 nmap.ico 图标文件
 
 ## 小白自学大神勿喷
