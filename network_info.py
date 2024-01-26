@@ -1,10 +1,14 @@
 import nmap
 
 
-def get_network_info(target):
+def get_network_info(host_network_info, nmap_path):
     # 创建一个 Nmap 对象
-    nm = nmap.PortScanner(nmap_search_path=('nmap', r"D:\Download_tools\Nmap\nmap.exe"))
-    nm.scan(hosts=target, arguments='-sL')
+    # nm = nmap.PortScanner(nmap_search_path=('nmap', r"D:\Download_tools\Nmap\nmap.exe"))
+    # nmap_path = r"D:\Download_tools\Nmap\nmap.exe"
+
+    nm = nmap.PortScanner(nmap_search_path=(nmap_path,))
+
+    nm.scan(hosts=host_network_info, arguments='-sL')
 
     network_interfaces = {}
 
@@ -18,6 +22,6 @@ def get_network_info(target):
         print(f"主机 {host} 的网络接口信息：{interfaces}")
 
 
-
+# get_network_info('192.168.0.108')
 
 

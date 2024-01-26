@@ -1,14 +1,16 @@
 import nmap
 
 
-def scan_active_hosts(target_subnet):
+def scan_active_hosts(host_active_hosts, nmap_path):
 
     print("正在探测活动主机...")
 
-    nm = nmap.PortScanner(nmap_search_path=('nmap', r"D:\Download_tools\Nmap\nmap.exe"))
+    # nm = nmap.PortScanner(nmap_search_path=('nmap', r"D:\Download_tools\Nmap\nmap.exe"))
+    # nmap_path = r"D:\Download_tools\Nmap\nmap.exe"
 
+    nm = nmap.PortScanner(nmap_search_path=(nmap_path,))
     # 设置扫描参数，这里使用Ping扫描
-    nm.scan(hosts=target_subnet, arguments='-sn')
+    nm.scan(hosts=host_active_hosts, arguments='-sn')
 
     # 遍历扫描结果，获取活跃主机的信息
     active_hosts = []
@@ -28,5 +30,5 @@ def scan_active_hosts(target_subnet):
 
 # 指定目标子网，例如 '192.168.1.0/24'
 # target_subnet = '192.168.0.1/24'
-# active_hosts(target_subnet)
-#
+# scan_active_hosts(target_subnet)
+# #

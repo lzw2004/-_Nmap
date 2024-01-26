@@ -1,12 +1,11 @@
 import nmap
 
 
-def get_host_mac(target):
+def get_host_mac(host_for_mac,nmap_path):
     # 请将以下路径替换为你的 Nmap 可执行文件路径
-    nmap_path = r"D:\Download_tools\Nmap\nmap.exe"
-
+    # nmap_path = r"D:\Download_tools\Nmap\nmap.exe"
     nm = nmap.PortScanner(nmap_search_path=(nmap_path,))
-    nm.scan(hosts=target, arguments='-sn')
+    nm.scan(hosts=host_for_mac, arguments='-sn')
 
     mac_addresses = {}
 

@@ -1,11 +1,13 @@
 import nmap
 import concurrent.futures
 
-def scan_open_ports(target_host):
+def scan_open_ports(host_to_scan, nmap_path):
     # 创建一个 Nmap 对象
-    nm = nmap.PortScanner(nmap_search_path=('nmap', r"D:\Download_tools\Nmap\nmap.exe"))
+    # nm = nmap.PortScanner(nmap_search_path=('nmap', r"D:\Download_tools\Nmap\nmap.exe"))
+    # nmap_path = r"D:\Download_tools\Nmap\nmap.exe"
+    nm = nmap.PortScanner(nmap_search_path=(nmap_path,))
     # 使用 Nmap 对象进行扫描，指定扫描参数，这里使用默认的 SYN 扫描
-    nm.scan(hosts=target_host, arguments='-p 1-65535 --open')
+    nm.scan(hosts=host_to_scan, arguments='-p 1-65535 --open')
     # 遍历扫描结果，获取开放端口信息
     for host in nm.all_hosts():
         print("------------------------------------------")
@@ -21,4 +23,4 @@ def scan_open_ports(target_host):
                 print(f"端口: {port} \t 状态: {nm[host][proto][port]['state']}")
         print("------------------------------------------")
 
-# scan_open_ports()
+# scan_open_ports('192.168.0.108')

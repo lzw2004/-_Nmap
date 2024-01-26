@@ -5,28 +5,32 @@ from open_ports import scan_open_ports
 from host_mac import get_host_mac
 from network_info import get_network_info
 
+# 设置 Nmap 的路径
+# nmap_path = " 你的nmap路径 "
+nmap_path = r"D:\Download_tools\Nmap\nmap.exe"
+
 def main(num):
     num = num.lower()
     # 探测活跃主机
     if num == "1":
         host_active_hosts = input("请输入IP地址或网段：")
-        scan_active_hosts(host_active_hosts)
+        scan_active_hosts(host_active_hosts,nmap_path)
     # 扫描开放端口
     elif num == "2":
         host_to_scan = input("请输入IP地址或网段：")
-        scan_open_ports(host_to_scan)
+        scan_open_ports(host_to_scan, nmap_path)
     # 获取主机系统信息
     elif num == "3":
         host_for_os_info = input("请输入IP地址或网段：")
-        get_os_info(host_for_os_info)
+        get_os_info(host_for_os_info, nmap_path)
     # 获取主机MAC地址
     elif num == "4":
         host_for_mac = input("请输入IP地址或网段：")
-        get_host_mac(host_for_mac)
+        get_host_mac(host_for_mac, nmap_path)
     # 获取主机的网络接口信息
     elif num == "5":
         host_network_info = input("请输入IP地址或网段：")
-        get_network_info(host_network_info)
+        get_network_info(host_network_info, nmap_path)
     # 退出
     elif num ==  "6" or num == "q" or num == "exit":
         sys.exit("感谢使用，再见！")

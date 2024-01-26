@@ -1,12 +1,14 @@
 import nmap
 
 
-def get_os_info(target_host):
+def get_os_info(host_for_os_info, nmap_path):
 
-    nm = nmap.PortScanner(nmap_search_path=('nmap', r"D:\Download_tools\Nmap\nmap.exe"))
+    # nm = nmap.PortScanner(nmap_search_path=('nmap', r"D:\Download_tools\Nmap\nmap.exe"))
+    # nmap_path = r"D:\Download_tools\Nmap\nmap.exe"
 
+    nm = nmap.PortScanner(nmap_search_path=(nmap_path,))
     # 使用 Nmap 对象进行操作系统信息检测
-    nm.scan(hosts=target_host, arguments='-O')
+    nm.scan(hosts=host_for_os_info, arguments='-O')
 
     # 遍历扫描结果，获取操作系统信息
     for host in nm.all_hosts():
@@ -25,6 +27,6 @@ def get_os_info(target_host):
         else:
             print(f"IP：{host}")
 
-
+#
 # target_host = "192.168.0.1/24"
 # get_os_info(target_host)
