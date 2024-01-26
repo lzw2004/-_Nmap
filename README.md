@@ -17,6 +17,10 @@
 
 环境搭建完后就可以克隆了呦
 ```python
-git clone 
+git clone https://github.com/lzw2004/XiaoZhi_Nmap.git
 ```
+
+最后一步的操作就是配置 Nmap 工具的路径，在 **main.py** 文件里边进行修改
+
+
    
