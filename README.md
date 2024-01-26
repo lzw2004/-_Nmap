@@ -32,3 +32,4 @@ nmap_path = r"D:\Download_tools\Nmap\nmap.exe"
 全部操作完就得到了一个简易版的Nmap网络扫描小工具
 
 ## 小白自学大神勿喷
+工具仅供参考学习使用，出现任何问题后果自负
