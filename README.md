@@ -20,7 +20,15 @@
 git clone https://github.com/lzw2004/XiaoZhi_Nmap.git
 ```
 
-最后一步的操作就是配置 Nmap 工具的路径，在 **main.py** 文件里边进行修改
+最后一步的操作就是配置 Nmap 工具的路径，在 **main.py** 文件里边进行修改(7-11行)
 
+```python
+# 设置 Nmap 的路径
+# nmap_path = " 你的nmap路径 "
+nmap_path = r"D:\Download_tools\Nmap\nmap.exe"
+```
+我的路径是 "D:\Download_tools\Nmap\nmap.exe" 改成你的就好啦
 
-   
+全部操作完就得到了一个简易版的Nmap网络扫描小工具
+
+## 小白自学大神勿喷
