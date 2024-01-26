@@ -7,16 +7,16 @@
 2. 安装[python](https://www.python.org/)
 
 3. 安装python-nmap
-   ```python
+   ```cmd
     pip install -r requirements.txt
    ```
    或者
-   ```python
+   ```cmd
    pip install python-nmap
    ```
 
 环境搭建完后就可以克隆了呦
-```python
+```cmd
 git clone https://github.com/lzw2004/XiaoZhi_Nmap.git
 ```
 
